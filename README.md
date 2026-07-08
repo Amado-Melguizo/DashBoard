@@ -1,2 +1,2 @@
 # DashBoard
-Proyecto de un Dashboard creado por Typescript para el aprendizaje del lenguaje
+Proyecto de un Dashboard creado en Typescript para el aprendizaje del lenguaje
