@@ -1,0 +1,1 @@
+{"version":3,"file":"DashState.d.ts","sourceRoot":"","sources":["../../src/types/DashState.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,KAAK,GAAG,MAAM,GAAG,OAAO,CAAC;AAErC,MAAM,WAAW,UAAU;IACvB,KAAK,EAAE,MAAM,GAAG,OAAO,GAAG,OAAO,CAAC;IAClC,KAAK,EAAE,KAAK,CAAC;IACb,QAAQ,EAAC,MAAM,CAAA;IACf,YAAY,EAAE,MAAM,CAAA;CACvB"}

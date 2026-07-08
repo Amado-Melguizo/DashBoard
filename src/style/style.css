@@ -1,0 +1,217 @@
+/* Contenido principal */
+#main {
+    margin-left: 280px; /* espacio para el sidebar */
+    padding: 20px;
+}
+
+/* Sidebar base */
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    transform: translateX(0); /* visible */
+    z-index: 1000;
+}
+
+/* Oculto */
+#sidebar.closed {
+    transform: translateX(100%);
+}
+
+/* Temas */
+.sidebar-dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+.sidebar-light {
+    background: #f2f2f2;
+    color: #333;
+}
+
+.body-dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+.body-light {
+    background: #f2f2f2;
+    color: #333;
+}
+
+
+/* Contenedor general Usuarios*/
+#userCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Tarjeta */
+.userCard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 6px solid #4a90e2;
+}
+
+/* Hover */
+.userCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.userCard h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Texto */
+.userCard p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+/* Estado activo */
+.userCard .active {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Estado inactivo */
+.userCard .inactive {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Contenedor general Tareas */
+#taskCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Tarjeta */
+.taskCard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 6px solid #4a90e2;
+}
+
+/* Hover */
+.taskCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.taskCard h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Texto */
+.taskCard p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+/* Estado activo */
+.taskCard .completed {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* Estado inactivo */
+.taskCard .inProgress {
+    color: #3c6ae7;
+    font-weight: bold;
+}
+
+/* Botones */
+
+/* Boton lateral del sidebar */
+.floating-btn {
+    position: fixed;
+    top: 25%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #222;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.floating-btn:hover {
+    background: #444;
+    padding-right: 22px;
+}
+
+/* Boton  del theme */
+.theme-btn {
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+
+.theme-btn:active {
+    transform: scale(0.9);
+}
+
+
+/* Alertas a los usuarios */
+.alert {
+    position: fixed;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 280px;
+    max-width: 420px;
+    padding: 15px 21px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    z-index: 3000;
+    animation: fadeInScale 0.25s ease-out;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.alert.success { background: #2ecc71; }
+.alert.error { background: #e74c3c; }
+.alert.info { background: #3498db; }
+.alert.warning { background: #dc7024; }
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
