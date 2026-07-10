@@ -245,16 +245,25 @@
     max-height: 2000px; /* suficiente para mostrar todo */
 }
 
-/* Animación de aparición ordenada */
+/* Estado inicial de las tarjetas */
 .taskCard, .userCard {
     opacity: 0;
     transform: translateY(10px);
+}
+
+/* Animación de aparición ordenada */
+.stagger {
     animation: fadeInUp 0.4s forwards;
 }
 
 @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+

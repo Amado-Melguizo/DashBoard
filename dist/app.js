@@ -343,6 +343,15 @@ function getTasks() {
 }
 getUsers();
 getTasks();
+function applyStaggerAnimation(containerId) {
+    const cards = document.querySelectorAll(`#${containerId} .userCard, #${containerId} .taskCard`);
+    cards.forEach((card, index) => {
+        if (card instanceof HTMLElement) {
+            card.classList.add("stagger");
+            card.style.animationDelay = `${index * 60}ms`;
+        }
+    });
+}
 function enableGroupToggle() {
     const userGroup = document.getElementById("userGroup");
     const userCards = document.getElementById("userCards");
@@ -351,14 +360,18 @@ function enableGroupToggle() {
     userGroup.addEventListener("click", () => {
         userCards.classList.toggle("expanded");
         userCards.classList.toggle("collapsed");
+        if (userCards.classList.contains("expanded")) {
+            applyStaggerAnimation("userCards");
+        }
     });
     taskGroup.addEventListener("click", () => {
         taskCards.classList.toggle("expanded");
         taskCards.classList.toggle("collapsed");
+        if (taskCards.classList.contains("expanded")) {
+            applyStaggerAnimation("taskCards");
+        }
     });
 }
 enableGroupToggle();
-document.getElementById("userCount").textContent = users.length.toString();
-document.getElementById("taskCount").textContent = taskList.length.toString();
 export {};
 //# sourceMappingURL=app.js.map

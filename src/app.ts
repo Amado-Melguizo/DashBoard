@@ -415,9 +415,9 @@ async function getUsers() {
 
         renderUserApiCards(dataUserApi);
 
-         // Actualizar contador de Usuarios
+        // Actualizar contador de Usuarios
         document.getElementById("userCount")!.textContent = dataUserApi.length.toString();
-        
+
         showAlert({ code: 200, message: "Usuarios cargados correctamente", type: "success" })
 
     } catch (error) {
@@ -465,6 +465,17 @@ async function getTasks() {
 getUsers()
 getTasks()
 
+function applyStaggerAnimation(containerId: string) {
+    const cards = document.querySelectorAll(`#${containerId} .userCard, #${containerId} .taskCard`);
+
+    cards.forEach((card, index) => {
+        if (card instanceof HTMLElement) {
+            card.classList.add("stagger");
+            card.style.animationDelay = `${index * 60}ms`;
+        }
+    });
+
+}
 
 function enableGroupToggle() {
     const userGroup = document.getElementById("userGroup")!;
@@ -475,15 +486,22 @@ function enableGroupToggle() {
     userGroup.addEventListener("click", () => {
         userCards.classList.toggle("expanded");
         userCards.classList.toggle("collapsed");
+
+        if (userCards.classList.contains("expanded")) {
+            applyStaggerAnimation("userCards");
+        }
     });
 
     taskGroup.addEventListener("click", () => {
         taskCards.classList.toggle("expanded");
         taskCards.classList.toggle("collapsed");
+
+        if (taskCards.classList.contains("expanded")) {
+            applyStaggerAnimation("taskCards");
+        }
     });
 }
 
+
 enableGroupToggle()
 
-document.getElementById("userCount")!.textContent = users.length.toString();
-document.getElementById("taskCount")!.textContent = taskList.length.toString();
