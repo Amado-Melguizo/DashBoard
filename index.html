@@ -10,8 +10,20 @@
 
 <body>
     <h1> DASHBOARD</h1>
-    <div id="userCards"></div>
-    <div id="taskCards"></div>
+    <div class="groupCard" id="userGroup">
+        <h2>Usuarios (<span id="userCount"></span>)</h2>
+        <p>Haz clic para ver las tarjetas</p>
+    </div>
+
+    <div id="userCards" class="collapsed"></div>
+
+    <div class="groupCard" id="taskGroup">
+        <h2>Tareas (<span id="taskCount"></span>)</h2>
+        <p>Haz clic para ver las tarjetas</p>
+    </div>
+
+    <div id="taskCards" class="collapsed"></div>
+
 
     <div id="main">
         <aside id="sidebar">

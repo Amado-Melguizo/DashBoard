@@ -304,6 +304,8 @@ function getUsers() {
             }
             console.log('dataApi', dataUserApi);
             renderUserApiCards(dataUserApi);
+            // Actualizar contador de Usuarios
+            document.getElementById("userCount").textContent = dataUserApi.length.toString();
             showAlert({ code: 200, message: "Usuarios cargados correctamente", type: "success" });
         }
         catch (error) {
@@ -329,6 +331,8 @@ function getTasks() {
             }
             console.log('dataApi', dataTaskApi);
             renderTaskApiCards(dataTaskApi);
+            //Actualizar contador de tareas
+            document.getElementById("taskCount").textContent = dataTaskApi.length.toString();
             showAlert({ code: 200, message: "Tareas cargadas correctamente", type: "success" });
         }
         catch (error) {
@@ -339,5 +343,22 @@ function getTasks() {
 }
 getUsers();
 getTasks();
+function enableGroupToggle() {
+    const userGroup = document.getElementById("userGroup");
+    const userCards = document.getElementById("userCards");
+    const taskGroup = document.getElementById("taskGroup");
+    const taskCards = document.getElementById("taskCards");
+    userGroup.addEventListener("click", () => {
+        userCards.classList.toggle("expanded");
+        userCards.classList.toggle("collapsed");
+    });
+    taskGroup.addEventListener("click", () => {
+        taskCards.classList.toggle("expanded");
+        taskCards.classList.toggle("collapsed");
+    });
+}
+enableGroupToggle();
+document.getElementById("userCount").textContent = users.length.toString();
+document.getElementById("taskCount").textContent = taskList.length.toString();
 export {};
 //# sourceMappingURL=app.js.map
