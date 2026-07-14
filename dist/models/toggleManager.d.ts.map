@@ -1,0 +1,1 @@
+{"version":3,"file":"toggleManager.d.ts","sourceRoot":"","sources":["../../src/models/toggleManager.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,0BAA0B,CAAC;AAEtD,qBAAa,YAAY;IACrB,OAAO,CAAC,KAAK,CAAS;gBAEV,YAAY,GAAE,MAAgB;IAI1C,QAAQ,IAAI,MAAM;IAIlB,WAAW,IAAI,KAAK;CAIvB"}
